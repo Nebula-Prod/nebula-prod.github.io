@@ -22,11 +22,22 @@
                 src: url(/fonts/Inter-VariableFont_slnt\,wght.ttf)
             }
 
+            @font-face {
+                font-family: Nebulav2;
+                src: url(/fonts/Nebulav2-Regular.ttf);
+            }
+
             body {
                 font-family: Inter;
                 background-color: #0c0c0f;
+                color: white;
                 margin: 0px;
                 padding: 0px;
+            }
+
+            h1, h2 {
+                font-family: Montserrat;
+                font-weight: 100;
             }
 
             .headerbg {
@@ -42,10 +53,40 @@
                 z-index: 0;
             }
 
-            h1 {
-                font-family: Montserrat;
-                font-weight: 100;
-                color: white;
+            .headercontainer {
+                font-size: 64px;
+                width: 100%;
+                position: absolute;
+                offset-position: 1000px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .headercontainer img {
+                height: 10vw;
+                margin: 30px;
+                object-fit: scale-down;
+            }
+
+            .headertextcontainer {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .headertextcontainer h1, h2 {
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 3px;
+                margin-bottom: 0px;
+            }
+
+            .headertextcontainer h2 {
+                font-size: 28px;
+            }
+
+            .nebulafont {
+                font-family: Nebulav2;
             }
         </style>
     </head>
@@ -56,7 +97,11 @@
             </video>
         </div>
         <div class="headercontainer">
-            <h1>NEBULA STUDIOS PRODUCTIONS</h1>
+            <img src="/cdn/assets/logo1080vec.png">
+            <div class="headertextcontainer">
+                <h1 class="nebulafont">NEBULA</h1>
+                <h2>STUDIOS PRODUCTIONS</h2>
+            </div>
         </div>
     </body>
 </html>
