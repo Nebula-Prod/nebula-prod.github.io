@@ -40,6 +40,10 @@
                 font-weight: 100;
             }
 
+            sb {
+                font-weight: 200;
+            }
+
             .headerbg {
                 background-color: gray;
                 width: 100%;
@@ -54,18 +58,32 @@
             }
 
             .headercontainer {
-                font-size: 64px;
+                font-size: 78px;
                 width: 100%;
                 position: absolute;
-                offset-position: 1000px;
+                transform: translateY(-50%);
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
 
+            .headertextbg {
+                background-color: #00000045;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 30px;
+                padding-right: 30px;
+                backdrop-filter: blur(5px);
+            }
+
             .headercontainer img {
-                height: 10vw;
-                margin: 30px;
+                height: 13vw;
+                margin-right: 15px;
                 object-fit: scale-down;
             }
 
@@ -82,7 +100,8 @@
             }
 
             .headertextcontainer h2 {
-                font-size: 28px;
+                font-size: 42px;
+                transform: translateY(-30px);
             }
 
             .nebulafont {
@@ -97,10 +116,12 @@
             </video>
         </div>
         <div class="headercontainer">
-            <img src="/cdn/assets/logo1080vec.png">
-            <div class="headertextcontainer">
-                <h1 class="nebulafont">NEBULA</h1>
-                <h2>STUDIOS PRODUCTIONS</h2>
+            <div class="headertextbg">
+                <img src="/cdn/assets/logo1080vec.png">
+                <div class="headertextcontainer">
+                    <h1 class="nebulafont">NEBULA</h1>
+                    <h2>STUDIOS <sb>PRODUCTIONS</sb></h2>
+                </div>
             </div>
         </div>
     </body>
