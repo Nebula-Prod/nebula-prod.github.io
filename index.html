@@ -72,8 +72,12 @@
                 width: 100%;
                 backdrop-filter: blur(5px);
                 z-index: 100;
-                
+                transition-duration: .3s;
                 animation: 1s ease 0s normal forwards 1 animateOpacity;
+            }
+
+            .topnav:hover {
+                background-color: #000000;
             }
 
             .topnav a {
@@ -209,10 +213,6 @@
                 animation: 1s ease 3s normal forwards 1 animateOpacity;
             }
 
-            .contentdiv h1 {
-                font-size: 48px;
-            }
-
             .contentdiv h1, p {
                 margin: 5px;
                 text-align: center;
@@ -253,9 +253,9 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 25vh; height: 20vh; width: 100vw; padding-top: 5vw; padding-bottom: 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #00000045; opacity: 0%; animation: 1s ease 3s normal forwards 1 animateOpacity;">
-            <h1><sb>WHO</sb> WE ARE</h1>
-            <p>Nebula Studios is a multimedia content creation studio dedicated to making just plain cool stuff.<br>We're mostly comprised of neurodivergent queer nerds who just wanna create<br>We're the creators of projects including The Meatloaf Theorists, the VIOLET Assistant, the Nebula Heads Up Display System, and plenty of unpublished releases in the works ;)</p>
+        <div style="margin-top: 16vw; height: 20vh; width: 100vw; padding-top: 5vw; padding-bottom: 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #00000045; opacity: 0%; animation: 1s ease 3s normal forwards 1 animateOpacity;">
+            <h1 style="font-size: 3vw;"><sb>WHO</sb> WE ARE</h1>
+            <p style="font-size: 1.2vw;">Nebula Studios is a multimedia content creation studio dedicated to making just plain cool stuff.<br>We're mostly comprised of neurodivergent queer nerds who just wanna create<br>We're the creators of projects including The Meatloaf Theorists, the VIOLET Assistant, the Nebula Heads Up Display System, and plenty of unpublished releases in the works ;)</p>
         </div>
         <div class="contentdiv" style="height: 35vw; padding: 0px; background-color: black;">
             <video class="divvideobg" style="height: 100%" autoplay muted loop>
