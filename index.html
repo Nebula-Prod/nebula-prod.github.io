@@ -27,8 +27,22 @@
                 src: url(/fonts/Nebulav2-Regular.ttf);
             }
 
+            @keyframes animateOpacity {
+                0% {
+                    opacity: 0%;
+                }
+                100% {
+                    opacity: 100;
+                }
+            }
+
+            html {
+                overscroll-behavior: none;
+            }
+
             body {
                 font-family: Inter;
+                font-weight: 200;
                 background-color: #0c0c0f;
                 color: white;
                 margin: 0px;
@@ -41,24 +55,63 @@
             }
 
             sb {
-                font-weight: 200;
+                font-weight: 300;
+            }
+
+            .topnav {
+                background-color: #0000007a;
+                overflow: hidden;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 0;
+                height: 50px;
+                width: 100%;
+                backdrop-filter: blur(5px);
+                z-index: 100;
+                
+                animation: 1s ease 0s normal forwards 1 animateOpacity;
+            }
+
+            .topnav a {
+                margin: 10px;
+                font-family: Inter;
+                text-decoration: none;
+                color: #a6a6a6;
+                transition: 0.3s;
+            }
+
+            .topnav a:hover {
+                color: rgb(181, 91, 255);
+                font-weight: bold;
+                margin-left: 15px;
+                margin-right: 15px;
+                text-shadow: #e0a8ff 0 0 10px;
+            }
+
+            .active a:hover {
+                color: #a8c4ff;
+                text-shadow: #a8d4ff 0 0 10px;
             }
 
             .headerbg {
-                background-color: gray;
+                background-color: black;
                 width: 100%;
                 height: 30vh;
             }
 
-            .headerbg video {
+            .divvideobg {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 z-index: 0;
+                animation-name: animateOpacity;
+                animation-duration: 3s;
             }
 
             .headercontainer {
-                font-size: 78px;
+                font-size: 3.5vw;
                 width: 100%;
                 position: absolute;
                 transform: translateY(-40%);
@@ -74,17 +127,43 @@
                 justify-content: center;
                 align-items: center;
                 width: auto;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                padding-left: 180px;
-                padding-right: 180px;
+                padding-top: 1vw;
+                padding-bottom: 1vw;
+                padding-left: 8vw;
+                padding-right: 8vw;
                 backdrop-filter: blur(5px);
+                opacity: 0%;
+                animation: 1.5s ease 1s normal forwards 1 animateOpacity;
+            }
+
+            .mfbg {
+                background-color: #00000060;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 1vw;
+                padding-bottom: 1vw;
+                padding-left: 8vw;
+                padding-right: 8vw;
+                backdrop-filter: blur(2px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateY(-33.5vw);
+                position: absolute;
             }
 
             .headercontainer img {
                 height: 13vw;
                 margin-right: 15px;
                 object-fit: scale-down;
+                opacity: 0%;
+                animation: 1.5s ease 1.5s normal forwards 1 animateOpacity;
+            }
+
+            .headercontainer img:focus-visible {
+                opacity: 100%;
             }
 
             .headertextcontainer {
@@ -92,26 +171,72 @@
                 flex-direction: column;
             }
 
-            .headertextcontainer h1, h2 {
-                margin-left: 0px;
-                margin-right: 0px;
-                margin-top: 3px;
-                margin-bottom: 0px;
+            .headertextcontainer h1 {
+                margin: 0px;
+                opacity: 0%;
+                animation: 1.5s ease 2s normal forwards 1 animateOpacity;
             }
 
             .headertextcontainer h2 {
-                font-size: 42px;
-                transform: translateY(-30px);
+                margin: 0px;
+                opacity: 0%;
+                animation: 1.5s ease 2.5s normal forwards 1 animateOpacity;
+            }
+
+            .headertextcontainer h2 {
+                font-size: 2vw;
+                transform: translateY(-2vw);
             }
 
             .nebulafont {
                 font-family: Nebulav2;
             }
+
+            .contentdiv {
+                width: 100vw;
+                padding-top: 5vw;
+                padding-bottom: 5vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #00000045;
+                opacity: 0%;
+                animation: 1s ease 3s normal forwards 1 animateOpacity;
+            }
+
+            .contentdiv h1 {
+                font-size: 48px;
+            }
+
+            .contentdiv h1, p {
+                margin: 5px;
+                text-align: center;
+            }
+
+            .contentdiv p {
+                font-size: 18px;
+            }
+
+            footer {
+                background-color: black;
+                padding-top: 5vw;
+                padding-bottom: 5vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         </style>
     </head>
     <body>
+        <div class="topnav">
+            <a class="topnavactive" href="#">HOME</a>
+            <a href="/portfolio/">PROJECTS</a>
+            <a href="/contact/">CONTACT</a>
+            <a href="/about/">ABOUT</a>
+        </div>
         <div class="headerbg">
-            <video autoplay muted loop>
+            <video class="divvideobg" autoplay muted loop>
                 <source src="/cdn/assets/dots_bg.mp4">
             </video>
         </div>
@@ -124,5 +249,25 @@
                 </div>
             </div>
         </div>
+        <div style="margin-top: 25vh; height: 20vh; width: 100vw; padding-top: 5vw; padding-bottom: 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #00000045; opacity: 0%; animation: 1s ease 3s normal forwards 1 animateOpacity;">
+            <h1><sb>WHO</sb> WE ARE</h1>
+            <p>Nebula Studios is a multimedia content creation studio dedicated to making just plain cool stuff.<br>We're mostly comprised of neurodivergent queer nerds who just wanna create<br>We're the creators of projects including The Meatloaf Theorists, the VIOLET Assistant, the Nebula Heads Up Display System, and plenty of unpublished releases in the works ;)</p>
+        </div>
+        <div class="contentdiv" style="height: 35vw; padding: 0px; background-image: url(/cdn/assets/unholy.png); background-attachment:fixed; background-size: 100vw 100vh;">
+            <video class="divvideobg" style="height: 100%" autoplay muted loop>
+                <source src="/cdn/assets/meatloaftheory_fancybg.mp4">
+            </video>
+        </div>
+        <div class="mfbg">
+            <img src="/cdn/assets/MeatloafTheory.png" style="height: 15vw">
+            <a style="text-decoration: none; color: white;" href="https://www.youtube.com/@MeatloafTheory/"><h1 style="font-size: 4vw;">THE <sb>MEATLOAF THEORISTS</sb></h1></a>
+            <p style="font-size: 1.2vw;">The Meatloaf Theorists is a satire channel based on the channels created by Theorist Media/Matthew Patrick and owned by LunarX. The Meatloaf Theory project was intended to create a well edited parody of the Theory channels, copying the editing and production style as closely as possible on a 0 budget.</p>
+        </div>
     </body>
+    <footer>
+        <div style="text-align: center;">
+        © Nebula Studios, 2024<br>
+        <i>T2hvLCB3aGF0IGhhdmUgd2UgaGVyZT8gQSBzZWNyZXQgaHVudGVyIHBlcmhhcHM/IEEgdGhlb3Jpc3QsIGV2ZW4/IEkgdGhvdWdodCB5b3Ugd291bGQgYXBwcmVjaWF0ZSBhIGxpdHRsZSBnYW1lLiBMb29rIHRocm91Z2hvdXQgdGhlIHdlYnNpdGUsIHRoZXJlIGFyZSBwbGVudHkgb2Ygc2VjcmV0cyA6KQ==</i>
+        </div>
+    </footer>
 </html>
