@@ -159,6 +159,20 @@ sb {
     font-size: 3vw;
 }
 
+.mailbg {
+    width: 100vw;
+    position: absolute;
+    object-fit: cover;
+    height: 40vw;
+    transition-duration: 0.5s;
+    z-index: -1;
+    opacity: 40%;
+}
+
+.mailbg:hover {
+    opacity: 25%;
+}
+
 .mfbg {
     background-color: #00000060;
     border-radius: 2vw;
