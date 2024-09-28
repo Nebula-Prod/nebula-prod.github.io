@@ -161,7 +161,7 @@ sb {
 
 .mfbg {
     background-color: #00000060;
-    border-radius: 20px;
+    border-radius: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,6 +180,11 @@ sb {
 
 .mfbg a {
     color: white;
+}
+
+.mfbg h1 {
+    font-size: 4vw;
+    margin: 0px;
 }
 
 .headercontainer img {
