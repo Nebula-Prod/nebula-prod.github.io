@@ -258,13 +258,17 @@ redtext {
     animation: 1s ease 3s normal forwards 1 animateOpacity;
 }
 
+.contentdiv h1 {
+    font-size: 3vw;
+}
+
 .contentdiv h1, p {
     margin: 5px;
     text-align: center;
 }
 
 .contentdiv p {
-    font-size: 18px;
+    font-size: 1vw;
 }
 
 footer {
