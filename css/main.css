@@ -1,3 +1,5 @@
+/* You really poke around every piece of this site, hm? */
+
 @font-face {
     font-family: Montserrat;
     src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
@@ -37,6 +39,7 @@
 
 html {
     overscroll-behavior: none;
+    overflow-x: hidden;
 }
 
 body {
@@ -55,6 +58,10 @@ h1, h2 {
 
 sb {
     font-weight: 300;
+}
+
+redtext {
+    color: red;
 }
 
 .topnav {
