@@ -41,19 +41,20 @@
         <div class="firstcontentdiv">
             <h1><sb>WHO</sb> WE ARE</h1>
             <p>Nebula Studios is a group of neurodivergent queer nerds creating video productions, gaming productions, programming and UX design, and other miscellaneous projects.<br>We're infatuated with the question: How far can we take this?</p>
+            <p style="color: #0c0c0f;">why.can't.i.feel</p>
         </div>
         <div class="contentdiv" style="height: 45vw; background-color: black;">
             <video class="divvideobg" style="height: 100%" autoplay muted loop>
                 <source src="/cdn/assets/meatloaftheory_fancybg.mp4">
             </video>
         </div>
-        <div class="mfbg" style="transform: translateY(-42vw);">
+        <div class="mfbg" style="transform: translateY(-39vw); border-radius: 0;">
             <img src="/cdn/assets/MeatloafTheory.png" style="height: 15vw">
             <a href="https://www.youtube.com/@MeatloafTheory/"><h1>THE <sb>MEATLOAF THEORISTS</sb></h1></a>
             <p style="font-size: 1.2vw;">The Meatloaf Theorists is a satire channel based on the channels created by Theorist Media/Matthew Patrick and owned by LunarX. The Meatloaf Theory project was intended to create a well edited parody of the Theory channels, copying the editing and production style as closely as possible on a 0 budget.</p>
             <div style="display: flex; gap: 0.5vw;">
-                <button class="linkbtn" id="mtchannelbtn">VIEW CHANNEL PAGE ›</button>
-                <button class="linkbtn" id="mtprojectbtn">VIEW PROJECT PAGE ›</button>
+                <button class="linkbtn" id="mtchannelbtn"><sb>VIEW</sb> CHANNEL PAGE <sb>›</sb></button>
+                <button class="linkbtn" id="mtprojectbtn"><sb>VIEW</sb> PROJECT PAGE <sb>›</sb></button>
             </div>
         </div>
         <div class="contentdiv" style="height: 30vw; background-image: url(/cdn/assets/HUD_prod.png); background-attachment: fixed; background-size: auto 100vh;"></div>
@@ -69,11 +70,13 @@
         <div class="mfbg" style="transform: translateY(-31vw);">
             <h1><sb>IRON MAN</sb> ANIM DEMO</h1>
             <p style="font-size: 1.2vw;">This Iron Man animation demo was created for practice and demonstration. This is the first attempt at imitating Iron Man HUD styles after extensive studying. <redtext>V2UgY2FsbCB5b3UgS2FyYQ==</redtext></p>
+            <button class="linkbtn" id="improjectbtn"><sb>VIEW</sb> PROJECT PAGE <sb>›</sb></button>
         </div>
         <div class="contentdiv" style="height: 40vw; background-image: url(/cdn/assets/projects_bg.png); background-attachment: fixed; background-size: auto 100vh;"></div>
-        <div class="mfbg" style="transform: translateY(-25vw);">
+        <div class="mfbg" style="transform: translateY(-28vw); margin-left: 4vw;">
             <a href="/portfolio/"><h1>VIEW OUR <sb>PORTFOLIO</sb></h1></a>
             <p style="font-size: 1.2vw;">See projects and productions under the Nebula Studios branding scheme. <redtext>UkVNRU1CRVIgTklDQQ==</redtext></p>
+            <button class="linkbtn" id="portfoliobtn"><sb>GO TO</sb> PORTFOLIO <sb>›</sb></button>
         </div>
         <div style="display: flex; flex-direction: column; width: 100vw;">
             <div class="contentdiv" style="height: 40vw; background-color: black;">
@@ -81,9 +84,10 @@
                     <source src="/cdn/assets/dots_bg.mp4">
                 </video>
             </div>
-            <div class="mfbg" style="margin-left: 50vw; margin-top: 15vw">
-                <a href="/contact/"><h1>GET IN <sb>TOUCH</sb></h1></a>
+            <div class="mfbg" style="margin-left: 54vw; margin-top: 12vw">
+                <h1>GET IN <sb>TOUCH</sb></h1>
                 <p style="font-size: 1.2vw;">Contact us via emails and socials. <redtext>aW0gIGhlcmU=</redtext></p>
+                <button class="linkbtn" id="contactbtn"><sb>GO TO</sb> CONTACT <sb>›</sb></button>
             </div>
         </div>
         <div class="contentdiv" style="height: 40vw; background-image: url(/cdn/assets/wip.png); background-attachment: fixed; background-size: 100%;"></div>
@@ -95,12 +99,16 @@
         </div>
     </footer>
     <script>
+
+        const currentUrl = window.location.origin.replace(/\/$/, "");
+
         // Define the URLs in an array
         const urls = {
             mtchannelbtn: "https://www.youtube.com/@MeatloafTheory/",
-            mtprojectbtn: "https://nebula-prod.github.io/portfolio/meatloaf/",
-            improjectbtn: "https://nebula-prod.github.io/portfolio/ironman_animdemo/",
-            portfoliobtn: "https://nebula-prod.github.io/portfolio/"
+            mtprojectbtn: currentUrl + "/portfolio/meatloaf/",
+            improjectbtn: currentUrl + "/portfolio/ironman_animdemo/",
+            portfoliobtn: currentUrl + "/portfolio/",
+            contactbtn: currentUrl + "/contact/"
         };
 
         // Get all elements with the class 'linkbuttons'

@@ -178,6 +178,7 @@ redtext {
 
 .firstcontentdiv h1 {
     font-size: 3vw;
+    margin-bottom: 0;
 }
 
 .mailbg {
@@ -223,21 +224,28 @@ redtext {
 }
 
 .linkbtn {
-    padding: 1.1vw 2.2vw 1.1vw 2.2vw;
+    padding: 0.8vw 2.2vw 0.8vw 2.2vw;
     margin: 1vw;
     font-size: 1.25vw;
     font-family: Montserrat;
-    background-color: #160c00;
+    background-color: #0b0b0b;
     color: white;
     border: solid rgba(255, 255, 255, 0.25);
     border-width: 0.5px;
-    border-radius: 0.5vw;
     cursor: pointer;
     transition: background-color 0.1s ease;
 }
 
 .linkbtn:hover {
-    background-color: #392000;
+    background-color: #000000;
+}
+
+#mtchannelbtn, #mtprojectbtn {
+    background-color: #170c00 !important;
+}
+
+#mtchannelbtn:hover, #mtprojectbtn:hover {
+    background-color: #000000 !important;
 }
 
 .headercontainer img {

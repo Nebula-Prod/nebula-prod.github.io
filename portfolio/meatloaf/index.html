@@ -39,10 +39,9 @@
         <div class="firstcontentdiv" style="padding-bottom: 4vw; height: auto;">
             <h1 style="margin-bottom: 0;">THE <sb>MEATLOAF THEORISTS</sb></h1>
             <p>Status: COMPLETED<br></p>
-            <p>The Meatloaf Theorists (finish this page later)<br></p>
-            <video class="projectvideo" controls>
-                <source src="/cdn/assets/sodamnbuggy.mp4">
-            </video>
+            <p>The Meatloaf Theorists is a satire channel based on the channels created by Theorist Media/Matthew Patrick and owned by LunarX. The Meatloaf Theory project was intended to create a well edited parody of the Theory channels, copying the editing and production style as closely as possible on a 0 budget.<br></p>
+            <button class="linkbtn" id="channelbtn"><sb>VIEW</sb> CHANNEL PAGE <sb>›</sb></button>
+            <iframe width="864" height="480" src="https://www.youtube.com/embed/LCCk01BSoO0?si=m74YeuptdSYaUwpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="contentdiv" style="background-color: #080808;">
         </div>
@@ -52,5 +51,33 @@
         © Nebula Studios, 2024<br>Do not reuse or redistribute our assets without permission under any circumstance.<br>All rights reserved.<br>
         </div>
     </footer>
+    <script>
+
+        const currentUrl = window.location.origin.replace(/\/$/, "");
+
+        // Define the URLs in an array
+        const urls = {
+            channelbtn: "https://www.youtube.com/@MeatloafTheory/"
+        };
+
+        // Get all elements with the class 'linkbuttons'
+        const buttons = document.querySelectorAll(".linkbtn");
+
+        // Loop through each button
+        buttons.forEach(button => {
+            // Add click event listener to each button
+            button.addEventListener("click", function() {
+                // Get the button's ID and use it to find the corresponding URL
+                const url = urls[button.id];
+                
+                if (url) {
+                    // Open the corresponding URL in a new tab
+                    window.open(url, "_blank");
+                } else {
+                    console.log("No URL found for this button ID.");
+                }
+            });
+        });
+    </script>
     <script src="/scripts/tilt.js"></script>
 </html>
