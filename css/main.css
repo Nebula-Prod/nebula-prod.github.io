@@ -352,3 +352,8 @@ footer {
     transform: translateZ(25px);
     transition: transform 1s 0.1s cubic-bezier(.74,0,.13,.99);
 }
+
+.projectvideo {
+    margin-top: 3vw;
+    width: 40vw;
+}
