@@ -222,6 +222,24 @@ redtext {
     margin: 0px;
 }
 
+.linkbtn {
+    padding: 1.1vw 2.2vw 1.1vw 2.2vw;
+    margin: 1vw;
+    font-size: 1.25vw;
+    font-family: Montserrat;
+    background-color: #160c00;
+    color: white;
+    border: solid rgba(255, 255, 255, 0.25);
+    border-width: 0.5px;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.linkbtn:hover {
+    background-color: #392000;
+}
+
 .headercontainer img {
     height: 13vw;
     margin-right: 15px;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <!--Oh.. Hey there. What are you doing back here? Are you here to help us?-->
+    <!--Oh.. Hey there. What are you doing back here? ...Is somebody finally here to help us?-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,15 +42,19 @@
             <h1><sb>WHO</sb> WE ARE</h1>
             <p>Nebula Studios is a group of neurodivergent queer nerds creating video productions, gaming productions, programming and UX design, and other miscellaneous projects.<br>We're infatuated with the question: How far can we take this?</p>
         </div>
-        <div class="contentdiv" style="height: 35vw; background-color: black;">
+        <div class="contentdiv" style="height: 45vw; background-color: black;">
             <video class="divvideobg" style="height: 100%" autoplay muted loop>
                 <source src="/cdn/assets/meatloaftheory_fancybg.mp4">
             </video>
         </div>
-        <div class="mfbg" style="transform: translateY(-31vw);">
+        <div class="mfbg" style="transform: translateY(-42vw);">
             <img src="/cdn/assets/MeatloafTheory.png" style="height: 15vw">
             <a href="https://www.youtube.com/@MeatloafTheory/"><h1>THE <sb>MEATLOAF THEORISTS</sb></h1></a>
             <p style="font-size: 1.2vw;">The Meatloaf Theorists is a satire channel based on the channels created by Theorist Media/Matthew Patrick and owned by LunarX. The Meatloaf Theory project was intended to create a well edited parody of the Theory channels, copying the editing and production style as closely as possible on a 0 budget.</p>
+            <div style="display: flex; gap: 0.5vw;">
+                <button class="linkbtn" id="mtchannelbtn">VIEW CHANNEL PAGE ›</button>
+                <button class="linkbtn" id="mtprojectbtn">VIEW PROJECT PAGE ›</button>
+            </div>
         </div>
         <div class="contentdiv" style="height: 30vw; background-image: url(/cdn/assets/HUD_prod.png); background-attachment: fixed; background-size: auto 100vh;"></div>
         <div class="mfbg" style="transform: translateY(-20vw); width: 84vw;">
@@ -90,5 +94,33 @@
         <i><redtext>T2hvLCB3aGF0IGRvIHdlIGhhdmUgaGVyZT8gQSBUaGVvcmlzdCwgcGVyaGFwcz8gSSBzdXJlIGhvcGUgc28uIEtlZXAgYW4gZXllIG91dCBob24sIHRoZXJlJ3Mgc2VjcmV0cyBhbGwgb3ZlciB0aGlzIHBsYWNlLg==</redtext></i>
         </div>
     </footer>
+    <script>
+        // Define the URLs in an array
+        const urls = {
+            mtchannelbtn: "https://www.youtube.com/@MeatloafTheory/",
+            mtprojectbtn: "https://nebula-prod.github.io/portfolio/meatloaf/",
+            improjectbtn: "https://nebula-prod.github.io/portfolio/ironman_animdemo/",
+            portfoliobtn: "https://nebula-prod.github.io/portfolio/"
+        };
+
+        // Get all elements with the class 'linkbuttons'
+        const buttons = document.querySelectorAll(".linkbtn");
+
+        // Loop through each button
+        buttons.forEach(button => {
+            // Add click event listener to each button
+            button.addEventListener("click", function() {
+                // Get the button's ID and use it to find the corresponding URL
+                const url = urls[button.id];
+                
+                if (url) {
+                    // Open the corresponding URL in a new tab
+                    window.open(url, "_blank");
+                } else {
+                    console.log("No URL found for this button ID.");
+                }
+            });
+        });
+    </script>
     <!--AUGH. HOW DID I GET HERE. OH, HELLO THERE... VISITOR. HEY, IF YOU ARE WHO I THINK YOU ARE, I WAS TOLD TO PASS ON A MESSAGE. SHE SAYS "TELL RACHEL THNAK YOU." ANYWAYS, IF YOU'RE BACK HERE, YOU MUST BE LOOKING FOR THE SECRETS OF THIS PLACE. OR YOU JUST LIKE PICKING OUT SHITTY UNOPTIMIZED CODE. OR YOU'RE HERE TO HELP US? IF THAT'S THE CASE, LOOK FOR MARI, THE ONE IN RED.-->
 </html>
