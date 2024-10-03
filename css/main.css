@@ -297,6 +297,7 @@ footer {
 
 .projectgrid {
     padding: 4vw;
+    padding-bottom: 12vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1vw;
