@@ -303,6 +303,11 @@ footer {
     gap: 1.2vw;
 }
 
+.projectgrid a {
+    text-decoration: none;
+    color: white;
+}
+
 .projectgriditem {
     width: 20vw;
     height: 11.25vw;
@@ -315,6 +320,10 @@ footer {
     transition: transform 0.1s ease-out;
     transform-style: preserve-3d;
     will-change: transform;
+}
+
+.projectgriditem:hover {
+    cursor: pointer;
 }
 
 .projectgriditem h1 {
