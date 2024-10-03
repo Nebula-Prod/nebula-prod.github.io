@@ -37,6 +37,20 @@
     }
 }
 
+@keyframes flicker {
+    60%, 70%, 79%, 0%, 100% {
+        opacity: 1;
+    }
+
+    65%, 67%, 76%, 78% {
+        opacity: 0.2;
+    }
+
+    66%, 69%, 77% {
+        opacity: 0.8;
+    }
+}
+
 html {
     overscroll-behavior: none;
     overflow-x: hidden;
@@ -279,4 +293,45 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 0.7vw;
+}
+
+.projectgrid {
+    padding: 4vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1vw;
+}
+
+.projectgriditem {
+    width: 20vw;
+    height: 11.25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    /* Stuff related to the fancy card animation */
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.projectgriditem h1 {
+    font-size: 2vw;
+    margin: 0;
+}
+
+.projectgriditem p {
+    margin: 0;
+    font-size: 0.8vw;
+}
+
+.projectgriditem:hover h1 {
+    transform: translateZ(40px);
+    transition: transform 1s 0.05s cubic-bezier(.74,0,.13,.99);
+}
+
+.projectgriditem:hover p {
+    transform: translateZ(25px);
+    transition: transform 1s 0.1s cubic-bezier(.74,0,.13,.99);
 }
