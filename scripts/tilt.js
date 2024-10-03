@@ -13,7 +13,7 @@ document.querySelectorAll('.projectgriditem').forEach(item => {
       const rotateX = (mouseY / itemHeight) * sensitivity; // Properly invert Y-axis rotation
       const rotateY = (mouseX / itemWidth) * sensitivity;   // X-axis rotation remains the same
   
-      item.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+      item.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
     });
   
     item.addEventListener('mouseleave', function() {

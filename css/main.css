@@ -300,7 +300,7 @@ footer {
     padding-bottom: 12vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1vw;
+    gap: 1.2vw;
 }
 
 .projectgriditem {
