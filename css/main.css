@@ -294,6 +294,7 @@ redtext {
     align-items: center;
     justify-content: center;
     background-color: #00000045;
+    background-size: cover;
     opacity: 0%;
     animation: 1s ease 3s normal forwards 1 animateOpacity;
 }
