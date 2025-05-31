@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Nebula Studios Productions</title>
+    <link rel="icon" href="/cdn/assets/logo1080vec.png" type="image/png">
+    <meta name="description" content="Nebula Studios is an independent multimedia production studio founded, owned and operated by Clara Jones.">
+
+    <style>
+        /* ─────── Reset & Base Styles ─────── */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 16px;
+            line-height: 1.5;
+            scroll-behavior: smooth; /* For smooth scrolling to sections */
+        }
+        body {
+            font-family: sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        img, video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font: inherit;
+            color: inherit;
+        }
+
+        /* ─────── Header & Navigation ─────── */
+        .header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            max-height: 40px;
+            margin-right: 1rem;
+        }
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .topnav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .topnav li {
+            margin-left: 1.5rem;
+        }
+        .topnav li:first-child {
+            margin-left: 0;
+        }
+        .topnav a {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .topnav a:hover,
+        .topnav a.active {
+            color: #ddd;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.95); /* Slightly darker for mobile */
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .mobile-nav.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-nav .topnav {
+            flex-direction: column;
+            align-items: center;
+        }
+        .mobile-nav .topnav li {
+            margin: 1rem 0;
+        }
+        .mobile-nav .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ─────── Hero Section (Video + Overlay) ─────── */
+        .hero {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Default 16:9 aspect ratio */
+            max-height: 600px; /* Limit height on larger screens */
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 1rem;
+            z-index: 2;
+            width: 90%; /* Ensure overlay is responsive */
+            max-width: 500px; /* Limit max width of overlay content */
+        }
+        .hero-overlay img {
+            max-width: 120px;
+            margin-bottom: 1rem;
+            margin-left: auto; /* Center image */
+            margin-right: auto; /* Center image */
+        }
+        .hero-overlay h1 {
+            font-family: 'nebulafont', sans-serif; /* Assuming this font is defined elsewhere or a fallback */
+            font-size: 2.5rem; /* Increased for impact */
+            margin-bottom: 0.5rem;
+        }
+        .hero-overlay h2 {
+            font-size: 1.5rem; /* Increased for impact */
+            letter-spacing: 0.05em;
+        }
+
+        /* ─────── Content Section ─────── */
+        .content-section {
+            padding: 3rem 1.5rem; /* Increased padding for more space */
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 3rem; /* Add consistent bottom margin */
+        }
+        .section-title {
+            font-size: 2rem; /* Adjusted for better hierarchy */
+            margin-bottom: 2rem; /* More space below title */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .section-title sb {
+            font-weight: bold;
+        }
+        .content-section p {
+            font-size: 1.1rem; /* Slightly larger text for readability */
+            color: #ddd;
+            line-height: 1.7; /* Increased line height */
+            margin-bottom: 1.5rem; /* More space between paragraphs */
+        }
+        .content-section p.hidden-text {
+            color: #0c0c0f; /* Keep original color for hidden text */
+            margin-bottom: 0; /* No bottom margin for hidden text */
+        }
+
+        /* ─────── Video Background Sections with Overlay Cards ─────── */
+        .video-overlay-section {
+            position: relative;
+            width: 100%;
+            margin-bottom: 3rem; /* Consistent bottom margin */
+        }
+        .video-background {
+            position: relative;
+            padding-top: 40%; /* Reduced aspect ratio for less height */
+            max-height: 450px; /* Limit height on larger screens */
+            overflow: hidden;
+            background: #000;
+        }
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+        .overlay-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.85); /* Slightly more opaque */
+            color: #fff;
+            padding: 2rem; /* Increased padding */
+            border-radius: 8px;
+            text-align: center;
+            max-width: 90%; /* Max width for smaller screens */
+            width: 600px; /* Preferred width for larger screens */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+        }
+        .overlay-card img {
+            max-width: 150px;
+            margin: 0 auto 1.5rem; /* Center image with more bottom margin */
+        }
+        .overlay-card h1 {
+            font-size: 1.8rem; /* Adjusted for card */
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .overlay-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 2rem; /* More space before buttons */
+            color: #ccc;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem; /* More space between buttons */
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .button-group button {
+            background-color: #fff;
+            color: #000;
+            padding: 0.8rem 1.8rem; /* Larger buttons */
+            border-radius: 6px; /* Slightly more rounded */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background-color 0.3s, transform 0.2s; /* Add transform for hover effect */
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .button-group button:hover {
+            background-color: #eee;
+            transform: translateY(-2px); /* Lift button on hover */
+        }
+
+        /* ─────── Background Image Sections ─────── */
+        .bg-image-section {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            padding: 5rem 1.5rem; /* Increased padding for more vertical space */
+            margin-bottom: 3rem; /* Consistent bottom margin */
+            display: flex; /* Use flexbox to center overlay */
+            justify-content: center;
+            align-items: center;
+            min-height: 350px; /* Ensure section has height even without content */
+        }
+        .bg-image-overlay {
+            max-width: 800px;
+            width: 90%; /* Responsive width */
+            background-color: rgba(0, 0, 0, 0.75); /* Slightly more opaque */
+            color: #fff;
+            padding: 2rem; /* Increased padding */
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+        }
+        .bg-image-overlay h1 {
+            font-size: 1.8rem; /* Adjusted for consistency */
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .bg-image-overlay p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 2rem; /* More space before buttons */
+            color: #ccc;
+        }
+        .redtext {
+            color: #ff4d4d; /* A slightly softer red */
+            font-weight: bold; /* Make it stand out more */
+        }
+
+
+        /* ─────── Footer ─────── */
+        footer {
+            background-color: #111;
+            color: #666;
+            text-align: center;
+            padding: 2rem 1rem; /* More padding for footer */
+            font-size: 0.9rem; /* Slightly larger font */
+            line-height: 1.6;
+        }
+
+        /* ─────── Responsive Design ─────── */
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none; /* Hide desktop nav on smaller screens */
+            }
+            .mobile-nav-toggle {
+                display: block; /* Show mobile toggle button */
+            }
+            .hero {
+                max-height: 450px; /* Adjust hero height for tablets */
+            }
+            .hero-overlay h1 {
+                font-size: 2rem;
+            }
+            .hero-overlay h2 {
+                font-size: 1.2rem;
+            }
+            .content-section {
+                padding: 2.5rem 1rem;
+                margin-bottom: 2.5rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+            .content-section p {
+                font-size: 1rem;
+            }
+            .video-background {
+                padding-top: 50%; /* Adjust video aspect ratio for tablets */
+                max-height: 350px;
+            }
+            .overlay-card {
+                width: 80%; /* Adjust width for tablets */
+                padding: 1.5rem;
+            }
+            .overlay-card h1 {
+                font-size: 1.5rem;
+            }
+            .overlay-card p {
+                font-size: 0.9rem;
+            }
+            .button-group button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            .bg-image-section {
+                padding: 4rem 1rem;
+                margin-bottom: 2.5rem;
+                min-height: 300px;
+            }
+            .bg-image-overlay {
+                padding: 1.5rem;
+            }
+            .bg-image-overlay h1 {
+                font-size: 1.5rem;
+            }
+            .bg-image-overlay p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 0.75rem;
+            }
+            .logo-text {
+                font-size: 1rem;
+            }
+            .hero {
+                max-height: 350px; /* Further adjust hero height for mobile */
+            }
+            .hero-overlay img {
+                max-width: 90px;
+            }
+            .hero-overlay h1 {
+                font-size: 1.8rem;
+            }
+            .hero-overlay h2 {
+                font-size: 1.1rem;
+            }
+            .content-section {
+                padding: 2rem 1rem;
+                margin-bottom: 2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            .content-section p {
+                font-size: 0.95rem;
+            }
+            .video-background {
+                padding-top: 60%; /* Adjust video aspect ratio for mobile to fill more space */
+                max-height: 300px;
+            }
+            .overlay-card {
+                width: 95%; /* Adjust width for mobile */
+                padding: 1rem;
+            }
+            .overlay-card img {
+                max-width: 100px;
+                margin-bottom: 1rem;
+            }
+            .overlay-card h1 {
+                font-size: 1.2rem;
+            }
+            .overlay-card p {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+            .button-group {
+                gap: 0.75rem;
+            }
+            .button-group button {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+            .bg-image-section {
+                padding: 3rem 1rem;
+                margin-bottom: 2rem;
+                min-height: 250px;
+            }
+            .bg-image-overlay {
+                padding: 1rem;
+            }
+            .bg-image-overlay h1 {
+                font-size: 1.2rem;
+            }
+            .bg-image-overlay p {
+                font-size: 0.85rem;
+            }
+            footer {
+                padding: 1.5rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="/cdn/assets/logo1080vec.png" alt="Nebula Studios Logo" class="logo">
+            <span class="logo-text">NEBULA STUDIOS</span>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="topnav">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="/portfolio/">Projects</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/about/">About</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <div class="mobile-nav">
+        <button class="close-button">×</button>
+        <nav>
+            <ul class="topnav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="/portfolio/">Projects</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/about/">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="hero" id="home">
+        <video autoplay muted loop>
+            <source src="/cdn/assets/dots_bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <img src="/cdn/assets/logo1080vec.png" alt="Nebula Studios Logo">
+            <h1>NEBULA</h1>
+            <h2>STUDIOS <sb>PRODUCTIONS</sb></h2>
+        </div>
+    </section>
+
+    <section class="content-section" id="who-we-are">
+        <h2 class="section-title"><sb>Who</sb> We Are</h2>
+        <p>
+            Nebula Studios is a group of neurodivergent queer nerds creating video productions, gaming productions,
+            programming and UX design, and other miscellaneous projects. We’re infatuated with the question:
+            How far can we take this?
+        </p>
+        <p class="hidden-text">why.can't.i.feel</p>
+    </section>
+
+    <section class="video-overlay-section">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="/cdn/assets/meatloaftheory_fancybg.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay-card">
+            <img src="/cdn/assets/MeatloafTheory.png" alt="Meatloaf Theorists Logo">
+            <h1>THE <sb>MEATLOAF THEORISTS</sb></h1>
+            <p>
+                The Meatloaf Theorists is a satire channel based on the channels created by
+                Theorist Media/Matthew Patrick and owned by LunarX. The Meatloaf Theory project
+                was intended to create a well edited parody of the Theory channels, copying the
+                editing and production style as closely as possible on a 0 budget.
+            </p>
+            <div class="button-group">
+                <button id="mtchannelbtn">View Channel Page ›</button>
+                <button id="mtprojectbtn">View Project Page ›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-image-section" style="background-image: url('/cdn/assets/HUD_prod.png');">
+        <div class="bg-image-overlay">
+            <h1>FUI DESIGN <sb>OBSESSION</sb></h1>
+            <p>
+                Relentless creators of studio quality FUI design and rendering<br>
+                77 68 61 74 2E 77 61 73 2E 6D 79 2E 6E 61 6D 65 3F
+            </p>
+        </div>
+    </section>
+
+    <section class="video-overlay-section">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="/cdn/assets/ironman_finalcomp.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay-card">
+            <h1><sb>IRON MAN</sb> ANIM DEMO</h1>
+            <p>
+                This Iron Man animation demo was created for practice and demonstration. This is the first
+                attempt at imitating Iron Man HUD styles after extensive studying.
+                <span class="redtext">S2FyYSwgY2FuIHlvdSBoZWFyIG1lPw==</span>
+            </p>
+            <div class="button-group">
+                <button id="improjectbtn">View Project Page ›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-image-section" style="background-image: url('/cdn/assets/projects_bg.png');">
+        <div class="bg-image-overlay">
+            <h1>VIEW OUR <sb>PORTFOLIO</sb></h1>
+            <p>
+                See projects and productions under the Nebula Studios branding scheme.
+                <span class="redtext">RG8gbm90IHRydXN0IHRoZSBOSUNBLg==</span>
+            </p>
+            <div class="button-group">
+                <button id="portfoliobtn">Go To Portfolio ›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-overlay-section">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="/cdn/assets/dots_bg.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay-card">
+            <h1>GET IN <sb>TOUCH</sb></h1>
+            <p>Contact us via emails and socials.</p>
+            <div class="button-group">
+                <button id="contactbtn">Go To Contact ›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-image-section" style="background-image: url('/cdn/assets/wip.png'); padding: 8rem 1rem;">
+        </section>
+
+    <footer>
+        © Nebula Studios, 2024<br>
+        Do not reuse or redistribute our assets without permission under any circumstance.<br>
+        All rights reserved.
+    </footer>
+
+    <script>
+        const currentUrl = window.location.origin.replace(/\/$/, "");
+        const urls = {
+            mtchannelbtn: "https://www.youtube.com/@MeatloafTheory/",
+            mtprojectbtn: currentUrl + "/portfolio/meatloaf/",
+            improjectbtn: currentUrl + "/portfolio/ironman_animdemo/",
+            portfoliobtn: currentUrl + "/portfolio/",
+            contactbtn: currentUrl + "/contact/"
+        };
+        document.querySelectorAll("button").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const id = btn.id;
+                if (urls[id]) window.open(urls[id], "_blank");
+            });
+        });
+
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const closeButton = document.querySelector('.mobile-nav .close-button');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav .topnav a');
+
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNav.classList.add('open');
+        });
+
+        closeButton.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open'); // Close nav when a link is clicked
+            });
+        });
+    </script>
+</body>
+</html>
