@@ -15,9 +15,63 @@
         <link rel="stylesheet" href="/css/main.css">
         <script src="/scripts/mobilecheck.js"></script>
         <style>
-            a {
-                color: #f7ebff;
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                padding: 2rem;
             }
+
+            .social-button {
+                background: #333;
+                color: white;
+                border: none;
+                border-radius: 0.25rem;
+                padding: 1.5rem;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.2s, box-shadow 0.2s;
+                text-decoration: none;
+            }
+
+            .social-button p {    
+                font-size: 14pt;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 450;
+            }
+
+            .social-button:hover p {
+                font-weight: 600;
+                transition: font-weight 0.25s 0.1s cubic-bezier(.74,0,.13,.99);
+            }
+
+            .projectgriditem {
+                width: 5rem;
+                height: 5rem;
+            }
+
+            .projectgriditem:hover img {
+                transform: translateZ(40px);
+                transition: transform 1s 0.1s cubic-bezier(.74,0,.13,.99);
+            }
+
+            .social-button img {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0.5rem;
+            }
+
+            .discord   { background-color: #5865F2; }
+            .youtube   { background-color: #FF0000; }
+            .tumblr    { background-color: #36465D; }
+            .bluesky   { background-color: #0085FF; }
+            .instagram { background-color: #C13584; }
+            .tiktok    { background-color: #010101; }
+            .reddit    { background-color: #FF4500; }
+            .twitter   { background-color: #1DA1F2; }
+
         </style>
     </head>
     <body>
@@ -44,7 +98,44 @@
         <div class="firstcontentdiv" style="margin-top: 9.2vw; height: 30vw; background-color: black;">
             <img src="/cdn/assets/angledgrid.png" class="mailbg">
             <h1 style="font-size: 3vw;">GET IN <sb>TOUCH</sb></h1>
-            <p style="font-size: 1.2vw;">For the fastest response, contact our founder, C̵l̸a̸i̶r̴e̸, on Discord @claraj.<br><br><sb>We look forward to hearing from you!</sb><br><br>ONE OF US:<br><a href="https://discord.gg/eadX797j3e">Discord Server</a> • <a href="https://www.youtube.com/@NebulousCreators">YouTube</a> • <a href="https://www.tumblr.com/nebulous-creators">Tumblr</a> • <a href="https://bsky.app/profile/nebulouscreators.bsky.social">Bluesky</a><br><a href="https://www.instagram.com/nebulouscreators/">Instagram</a> • <a href="https://www.tiktok.com/@nebulouscreators">TikTok</a> • <a href="https://www.reddit.com/user/NebulousCreators/">Reddit</a> • <a href="https://twitter.com/nebulacreators">Twitter</a></p>
+            <p style="font-size: 1.2vw;">For the fastest response, contact our founder, C̵l̸a̸i̶r̴e̸, on Discord @claraj.<br><br>
+                <sb>We look forward to hearing from you!</sb><br><br>
+                ONE OF US:</p>
+            
+            <div class="grid">
+                <a href="https://discord.gg/eadX797j3e" target="_blank" class="social-button projectgriditem discord">
+                    <img src="/cdn/assets/socialicons/discord.png" alt="Discord icon"><br>
+                    <p>Discord</p>
+                </a>
+                <a href="https://www.youtube.com/@NebulousCreators" target="_blank" class="social-button projectgriditem youtube">
+                    <img src="/cdn/assets/socialicons/youtube.png" alt="YouTube icon"><br>
+                    <p>YouTube</p>
+                </a>
+                <a href="https://www.tiktok.com/@nebulouscreators" target="_blank" class="social-button projectgriditem tiktok">
+                    <img src="/cdn/assets/socialicons/tiktok.png" alt="TikTok icon"><br>
+                    <p>TikTok</p>
+                </a>
+                <a href="https://www.instagram.com/nebulouscreators/" target="_blank" class="social-button projectgriditem instagram">
+                    <img src="/cdn/assets/socialicons/instagram.png" alt="Instagram icon"><br>
+                    <p>Instagram</p>
+                </a>
+                <a href="https://www.tumblr.com/nebulous-creators" target="_blank" class="social-button projectgriditem tumblr">
+                    <img src="/cdn/assets/socialicons/tumblr.png" alt="Tumblr icon"><br>
+                    <p>Tumblr</p>
+                </a>
+                <a href="https://bsky.app/profile/nebulouscreators.bsky.social" target="_blank" class="social-button projectgriditem bluesky">
+                    <img src="/cdn/assets/socialicons/bluesky.png" alt="Bluesky icon"><br>
+                    <p>Bluesky</p>
+                </a>
+                <a href="https://www.reddit.com/user/NebulousCreators/" target="_blank" class="social-button projectgriditem reddit">
+                    <img src="/cdn/assets/socialicons/reddit.png" alt="Reddit icon"><br>
+                    <p>Reddit</p>
+                </a>
+                <a href="https://twitter.com/nebulacreators" target="_blank" class="social-button projectgriditem twitter">
+                    <img src="/cdn/assets/socialicons/twitter.png" alt="Twitter icon"><br>
+                    <p>Twitter</p>
+                </a>
+            </div>
         </div>
     </body>
     <footer>
@@ -52,4 +143,5 @@
         © Nebula Studios, 2024<br>Do not reuse or redistribute our assets without permission under any circumstance.<br>All rights reserved.<br>
         </div>
     </footer>
+    <script src="/scripts/tilt.js"></script>
 </html>
