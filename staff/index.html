@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="dcterms.created" content="Sat, 28 Sep 2024 3:52:31 EST">
+        <title>Staff // Nebula</title>
+        <!--Embed description and icon-->
+        <meta content="https://nebula-prod.github.io/cdn/assets/logo1080vec.png" property="og:image">
+        <meta name="description" content="Staff page for Nebula Studios">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="/cdn/assets/logo1080vec.png">
+        <!--CSS Stylesheet-->
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/scripts/mobilecheck.js"></script>
+        <script src="/scripts/anim_inhibitor.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                padding: 2rem;
+            }
+
+            .staff-card {
+                color: white;
+                border: solid 2px;
+                border-radius: 0.25rem;
+                padding: 1.5rem;
+                padding-left: 0.5rem;
+                text-align: left;
+                transition: transform 0.2s, box-shadow 0.2s;
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+            }
+
+            .staff-card h1 {
+                font-weight: 450;
+                font-size: 24pt;
+            }
+
+            .staff-card:hover h1 {
+                font-weight: 600;
+                transition: font-weight 0.5s 0.1s cubic-bezier(.74,0,.13,.99);
+            }
+
+            .staff-card p {
+                text-align: left;
+                font-weight: 350;
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+
+            .staff-card h4 {
+                margin: 0px;
+                font-weight: 300;
+                font-size: 14pt;
+                margin-left: 6px;
+            }
+
+            .staff-card h3 {
+                margin: 0px;
+                font-weight: 400;
+                font-size: 10pt;
+                color: rgba(255, 255, 255, 0.5);
+                margin-left: 9px;
+            }
+
+            .projectgriditem {
+                width: 25vw;
+                height: 10rem;
+            }
+
+            .projectgriditem:hover img {
+                transform: translateZ(40px);
+                transition: transform 1s 0.1s cubic-bezier(.74,0,.13,.99);
+            }
+
+            .staff-card img {
+                width: 12rem;
+                height: 12rem;
+                margin-right: 0.75rem;
+                border-radius: .5rem;
+            }
+
+            .card-text {
+                display: flex;
+                justify-content: left;
+                align-items: flex-start;
+                text-align: left;
+                flex-direction: column;
+                height: 100%
+            }
+
+            .card-text a {
+                font-size: 12pt;
+                font-weight: 400;
+                color: white;
+            }
+            
+            .projectgriditem:hover div {
+                transform: translateZ(25px);
+                transition: transform 1s 0.1s cubic-bezier(.74,0,.13,.99);
+            }
+
+            .claire {border-color: #087ac1; background: rgba(32, 3, 58, 0.25);}
+            .autumn {border-color: #fab048; background: rgba(16, 44, 77, 0.25);}
+            .realm {border-color: #FF7231; background: rgba(35, 9, 59, 0.25);}
+            .mewbitts {border-color: #27bbf1; background: rgba(9, 29, 4, 0.25);}
+            .sapphire {border-color: #d62800; background: rgba(16, 3, 27, 0.25);}
+            .bee {border-color: #ff9a70; background: rgba(41, 2, 31, 0.25);}
+            .nathalie {border-color: #bbff6e; background: rgba(26, 12, 0, 0.25);}
+            .eclipse {border-color: #663399; background: rgba(33, 9, 19, 0.25);}
+            .nat {border-color: #ff1fff; background: rgba(5, 24, 10, 0.25);}
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="/">HOME</a>
+            <a href="/portfolio/">PROJECTS</a>
+            <a href="/contact/">CONTACT</a>
+            <a href="/about/">ABOUT</a>
+        </div>
+        <div class="headerbg">
+            <video class="divvideobg" autoplay muted loop>
+                <source src="/cdn/assets/dots_bg.mp4">
+            </video>
+        </div>
+        <div class="headercontainer">
+            <div class="headertextbg">
+                <img src="/cdn/assets/logo1080vec.png">
+                <div class="headertextcontainer">
+                    <h1 class="nebulafont">NEBULA</h1>
+                    <h2><sb>OUR</sb> STAFF</h2>
+                </div>
+            </div>
+        </div>
+        <div class="firstcontentdiv" style="margin-top: 9.2vw; height: 40vw; background-color: rgba(0, 0, 0, 0);">
+            <img src="/cdn/assets/angledgrid.png" class="mailbg" style="height: 50vw;">
+            <h1 style="font-size: 3vw; z-index: 1;">MEET THE <sb>TEAM</sb></h1>
+            
+            <div class="grid" style="z-index: 1;">
+
+                <div class="staff-card projectgriditem claire">
+                    <img src="/cdn/assets/staff/claire.png" alt="Profile picture">
+                    <div class="card-text">
+                        <h1>Claire</h1>
+                        <h4>ClaraJ // Clara Jones</h4>
+                        <h3>Founder, Head of Eldritch God Relations</h3>
+                        <p>Why are there so many goddamn raccoons in my office?</p>
+                        <a class="copy_text" title="claraj" href="./#">[<u>Discord</u>]</a>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem autumn">
+                    <img src="/cdn/assets/staff/autumn.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>Autumn</h1>
+                        <h3>Lesbianisms Research Specialist</h3>
+                        <p>Edits videos, makes content, and kisses women.</p>
+                        <a href="https://wetdry.world/@ohanamatsumae" target="_blank">[<u>Wetdryworld</u>]</a>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem realm">
+                    <img src="/cdn/assets/staff/realm.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>Realm</h1>
+                        <h4>Realmisted</h4>
+                        <h3>Head of Human Resources</h3>
+                        <p>Just your typical artist/animator who likes a little bit of chaos!</p>
+                        <a href="https://realmisted.carrd.co" target="_blank">[<u>Carrd</u>]</a>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem mewbitts">
+                    <img src="/cdn/assets/staff/mewbitts.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>MewBitts</h1>
+                        <h3>Three Raccoons in a Trench Coat</h3>
+                        <p>27 year old aspiring writer, musician, and parent.</p>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem sapphire">
+                    <img src="/cdn/assets/staff/sapphire.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>Sapphire</h1>
+                        <h4>Saph/Gigi</h4>
+                        <h3>Head Chaos Raccoon</h3>
+                        <p>She keeps stealing our Pizza.</p>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem bee">
+                    <img src="/cdn/assets/staff/bee.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>Bee</h1>
+                        <h3>Emotional Support Insect</h3>
+                        <p>Enby bracelet maker with a meatloaf and a dream</p>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem nathalie">
+                    <img src="/cdn/assets/staff/jade.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>Nathalie Jade</h1>
+                        <h3>Audio Engineer</h3>
+                        <p>Loves anything mycology related. Deer Enthusiast.</p>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem eclipse">
+                    <img src="/cdn/assets/staff/eclipse.jpg" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>eclipse raven</h1>
+                        <h3>Head of Tax Evasion</h3>
+                        <p>autistic transfem (she/it) who does a little of everything :3</p>
+                        <a class="copy_text" title="nonsentientorganism" href="./#">[<u>Discord</u>]</a>
+                    </div>
+                </div>
+
+                <div class="staff-card projectgriditem nat">
+                    <img src="/cdn/assets/staff/natalie.png" alt="Profile Picture">
+                    <div class="card-text">
+                        <h1>Natalie</h1>
+                        <h4>Nat</h4>
+                        <h3>Head Rubber Ducky</h3>
+                        <p>Gearhead, neophyte videogame modder, and outdoors-loving girl.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div style="text-align: center;">
+        © Nebula Studios, 2025<br>Do not reuse or redistribute our assets without permission under any circumstance.<br>All rights reserved.<br>
+        </div>
+    </footer>
+    <script>
+        $('.copy_text').click(function (e) {
+            e.preventDefault();
+            var copyText = $(this).attr('title');
+
+            document.addEventListener('copy', function(e) {
+                e.clipboardData.setData('text/plain', copyText);
+                e.preventDefault();
+            }, true);
+
+            document.execCommand('copy');  
+            alert('Copied username to clipboard: ' + copyText); 
+        });
+    </script>
+    <script src="/scripts/tilt.js"></script>
+</html>

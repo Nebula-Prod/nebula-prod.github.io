@@ -78,6 +78,10 @@ redtext {
     color: red;
 }
 
+.infront {
+    z-index: 100;
+}
+
 .topnav {
     background-color: #0000007a;
     overflow: hidden;
@@ -174,6 +178,7 @@ redtext {
     background-color: #00000000;
     opacity: 0%;
     animation: 1s ease 3s normal forwards 1 animateOpacity;
+    z-index: -1;
 }
 
 .firstcontentdiv h1 {
@@ -187,12 +192,12 @@ redtext {
     object-fit: cover;
     height: 40vw;
     transition-duration: 0.5s;
-    z-index: -1;
-    opacity: 40%;
+    z-index: 0;
+    opacity: 50%;
 }
 
 .mailbg:hover {
-    opacity: 25%;
+    opacity: 20%;
 }
 
 .mfbg {
