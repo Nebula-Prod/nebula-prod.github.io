@@ -122,12 +122,12 @@
         </style>
     </head>
     <body>
-        <div class="topnav">
-            <a href="/">HOME</a>
-            <a href="/portfolio/">PROJECTS</a>
-            <a href="/contact/">CONTACT</a>
-            <a href="/about/">ABOUT</a>
-        </div>
+        <div id="topnav"></div>
+    <script>
+        fetch("/shared/nav.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("topnav").innerHTML = html);
+    </script>
         <div class="headerbg">
             <video class="divvideobg" autoplay muted loop>
                 <source src="/cdn/assets/dots_bg.mp4">
@@ -240,11 +240,12 @@
             </div>
         </div>
     </body>
-    <footer>
-        <div style="text-align: center;">
-        © Nebula Studios, 2025<br>Do not reuse or redistribute our assets without permission under any circumstance.<br>All rights reserved.<br>
-        </div>
-    </footer>
+<div id="footer"></div>
+<script>
+    fetch("/shared/footer.html")
+        .then(res => res.text())
+        .then(html => document.getElementById("footer").innerHTML = html);
+</script>
     <script>
         $('.copy_text').click(function (e) {
             e.preventDefault();

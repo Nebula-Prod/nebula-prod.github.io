@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="dcterms.created" content="Wed, 11 Jun 2025 16:26:12 EST">
+    <title>Commission // Nebula</title>
+    <!--Embed description and icon-->
+    <meta content="https://nebula-prod.github.io/cdn/assets/logo1080vec.png" property="og:image">
+    <meta name="description" content="Hire me to edit your videos! Let's make something cool c;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="/cdn/assets/logo1080vec.png">
+    <!--CSS Stylesheet-->
+    <script src="/scripts/mobilecheck.js"></script>
+    <script src="/scripts/anim_inhibitor.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commissions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html {
+            font-family: Inter, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            gap: 2em;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        body {
+            font-weight: 300;
+        }
+
+        form,
+        .summary {
+            background: rgba(14, 16, 19, 0.75);
+            backdrop-filter: blur(3px);
+            padding: 1.5em;
+            border-radius: 0px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        fieldset {
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            padding: 1em;
+        }
+
+        legend {
+            text-transform: uppercase;
+            font-family: Montserrat;
+            font-size: 16pt;
+        }
+
+        .summary ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        button {
+            padding: 0.5em 2em;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: white 1px solid;
+            color: white;
+            border-radius: 0px;
+            cursor: pointer;
+            font-family: Inter;
+            font-size: 14pt;
+            transition: background-color 0.75s ease, font-weight 0.25s ease;
+        }
+
+        button:hover {
+            background-color: #6b1297;
+            font-weight: 600;
+        }
+
+        #summaryTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        #summaryTable th,
+        #summaryTable td {
+            border: 1px solid rgba(255, 255, 255, 0.484);
+            padding: 8px;
+            text-align: left;
+        }
+
+        #summaryTable thead {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #summaryTable tfoot {
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            border: 1px solid rgba(255, 255, 255, 0.685);
+            font-size: 1em;
+            font-family: inherit;
+            background-color: rgba(0, 0, 0, 0.15);
+            color: white;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border-color: #b44ff7;
+            box-shadow: 0 0 5px 3px rgba(208, 79, 247, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.685);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            position: relative;
+            margin-right: 6px;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        input[type="radio"]:checked {
+            border: 6px solid #ab4ff7;
+        }
+
+        input[type="radio"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px 3px rgba(197, 79, 247, 0.2);
+        }
+
+        input[type="radio"]:hover {
+            box-shadow: 0 0 5px rgba(195, 0, 255, 1);
+        }
+
+        /* Optional label spacing */
+        label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        .checkboxcontainer {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .checkboxcontainer input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: rgba(0, 0, 0, 0.146);
+            transition: all 0.25s ease;
+            border: solid 1px rgba(255, 255, 255, 0.4);
+        }
+
+        /* On mouse-over, add a grey background color */
+        .checkboxcontainer:hover input~.checkmark {
+            background-color: rgba(208, 0, 255, 0.146);
+            box-shadow: 0 0 5px 3px rgba(208, 79, 247, 0.2);
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .checkboxcontainer input:checked~.checkmark {
+            background-color: #bf21f3;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .checkboxcontainer input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .checkboxcontainer .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .griditem {
+            background-color: rgba(0, 0, 0, 0.253);
+            backdrop-filter: blur(3px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3vw;
+            border: solid 1px white;
+        }
+
+        .griditem h2 {
+            font-weight: 400;
+            font-size: 24pt;
+            margin: 0px;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init({
+                publicKey: 'sdwp_Jjp4nvPbPgPk',
+                // Do not allow headless browsers
+                blockHeadless: true,
+                limitRate: {
+                    // Set the limit rate for the application
+                    id: 'app',
+                    // Allow 1 request per 10s
+                    throttle: 10000,
+                },
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="topnav"></div>
+    <script>
+        fetch("/shared/nav.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("topnav").innerHTML = html);
+    </script>
+    <div class="headerbg">
+        <video class="divvideobg" autoplay muted loop>
+            <source src="/cdn/assets/dots_bg.mp4">
+        </video>
+    </div>
+    <div class="headercontainer">
+        <div class="headertextbg">
+            <img src="/cdn/assets/logo1080vec.png">
+            <div class="headertextcontainer">
+                <h1 class="nebulafont">NEBULA</h1>
+                <h2>
+                    <sb>COMMISSIONS</sb>
+                    FORM
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="firstcontentdiv" style="padding-bottom: 4vw; height: auto;">
+        <h1>COMMISSION REQUEST</h1>
+        <p>Thank you for considering commissioning me!<br><strong>NOTE: I ONLY ACCEPT PAYMENT THROUGH
+                CASHAPP.</strong><br>I'm sorry if that creates an issue, however I currently don't have another option.
+        </p>
+    </div>
+    <div class="contentdiv"
+        style="padding-bottom: 4vw; padding-top: 4vw; height: auto; background-image: url('/cdn/assets/crossgrid.png'); background-attachment: fixed;">
+        <div class="container">
+            <form id="commissionForm" style="width: 100vw;">
+                <!-- Package Selection -->
+                <fieldset>
+                    <legend>Package Type</legend>
+                    <label><input type="radio" name="package" value="custom" checked> Custom</label>
+                    <label><input type="radio" name="package" value="bundle"> Bundle (All for $70)</label>
+                </fieldset>
+                <!-- Duration -->
+                <fieldset>
+                    <legend>Duration</legend>
+                    <label for="duration">Footage or Voiceover Duration (in minutes):</label>
+                    <input type="number" id="duration" name="duration" min="1" max="300" step="1" placeholder="e.g. 5">
+                </fieldset>
+                <!-- Custom Options -->
+                <fieldset id="customOptions">
+                    <legend>Features</legend>
+                    <label class="checkboxcontainer">Subtitles ($25)
+                        <input type="checkbox" value="subtitles" name="features">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkboxcontainer">Color Correction ($20)
+                        <input type="checkbox" value="color" name="features">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkboxcontainer">BGM/SFX ($25)
+                        <input type="checkbox" value="bgm" name="features">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkboxcontainer">Short ($10)
+                        <input type="checkbox" value="short" name="features">
+                        <span class="checkmark"></span>
+                    </label>
+                </fieldset>
+                <!-- Project Type -->
+                <fieldset>
+                    <legend>Project Type</legend>
+                    <label><input type="radio" name="type" value="footage" checked> Footage</label>
+                    <label><input type="radio" name="type" value="mograph"> MoGraph</label>
+                    <label><input type="radio" name="type" value="other"> Other</label>
+                    <input type="text" id="otherText" placeholder="Describe your project..." style="display:none;">
+                </fieldset>
+                <!-- Request -->
+                <fieldset>
+                    <legend>Request</legend>
+                    <textarea id="requestText" name="requestText" rows="5" cols="40"
+                        placeholder="Tell me anything else I need to know... c:"></textarea>
+                </fieldset>
+                <!-- Contact Method -->
+                <fieldset>
+                    <legend>Preferred Contact</legend>
+                    <label><input type="radio" name="contact" value="discord" checked> Discord</label>
+                    <label><input type="radio" name="contact" value="email"> Email</label>
+                    <br>
+                    <input type="text" id="contactInfo" placeholder="Your Discord username...">
+                </fieldset>
+                <button type="button" id="submitBtn">Submit</button>
+            </form>
+            <!-- Summary Section -->
+            <div class="summary" style="width: 100vw;">
+                <h2 style="font-weight: 400; margin-top: 1vw; font-size: 22pt;">SUMMARY</h2>
+                <table id="summaryTable">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Custom Package</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Project Type: Footage</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>$<span id="totalPrice">0.00</span></strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="contentdiv"
+        style="padding-bottom: 4vw; padding-top: 4vw; height: auto; background-image: url('/cdn/assets/angledgrid.png'); background-attachment: fixed;">
+        <h1>
+            FORM <sb>HELP</sb>
+        </h1>
+        <div class="grid">
+            <div class="griditem">
+                <h2>PACKAGE TYPE</h2>
+                <p>Custom allows you to choose the individual features, like Subtitles or Color Correction, while bundle
+                    includes all 4 for $10 off.</p>
+            </div>
+            <div class="griditem">
+                <h2>DURATION</h2>
+                <p>The duration of your main source footage, or the total duration of clips. If you have separate
+                    audio/video recorded, enter the video duration. If it's only audio being sent, enter the duration of
+                    the audio.</p>
+            </div>
+            <div class="griditem">
+                <h2>SUBTITLES</h2>
+                <p>You will be sent subtitle files, which can be uploaded with the video to YouTube or embedded in the
+                    video itself.</p>
+            </div>
+            <div class="griditem">
+                <h2>COLOR CORRECTION</h2>
+                <p>Color correction for footage; Better looking footage tuned to make colors pop.</p>
+            </div>
+            <div class="griditem">
+                <h2>BGM/SFX</h2>
+                <p>Additional sound effects and music will be added, does not necessarily have to include both.</p>
+            </div>
+            <div class="griditem">
+                <h2>SHORT</h2>
+                <p>Includes a shortform clip, styled for YouTube Shorts, TikTok, Reels, etc</p>
+            </div>
+            <div class="griditem">
+                <h2>PROJECT TYPE</h2>
+                <p>Footage: Your project consists mostly of recorded footage from a camera<br>MoGraph: You have audio
+                    for a voiceover which will be the audio track to a Motion Graphics Animated video (think like Game
+                    Theory)</p>
+            </div>
+            <div class="griditem">
+                <h2>REQUEST</h2>
+                <p>How do you want me to edit the video? What's your demographic? How long do you want it to be,
+                    roughly? Etc</p>
+            </div>
+            <div class="griditem">
+                <h2>CONTACT</h2>
+                <p>Discord and email are the only -current- supported contact methods. When this form is submitted, I
+                    will reach out via your preferred method for you to send me your footage and other assets.</p>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/commspage_handler.js"></script>
+</body>
+<div id="footer"></div>
+<script>
+    fetch("/shared/footer.html")
+        .then(res => res.text())
+        .then(html => document.getElementById("footer").innerHTML = html);
+</script>
+
+</html>

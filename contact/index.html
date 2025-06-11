@@ -1,147 +1,192 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="dcterms.created" content="Sat, 28 Sep 2024 3:52:31 EST">
-        <title>Contact // Nebula</title>
-        <!--Embed description and icon-->
-        <meta content="https://nebula-prod.github.io/cdn/assets/logo1080vec.png" property="og:image">
-        <meta name="description" content="Contact page for Nebula Studios">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Favicon-->
-        <link rel="icon" type="image/png" href="/cdn/assets/logo1080vec.png">
-        <!--CSS Stylesheet-->
-        <link rel="stylesheet" href="/css/main.css">
-        <script src="/scripts/mobilecheck.js"></script>
-        <script src="/scripts/anim_inhibitor.js"></script>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1rem;
-                padding: 2rem;
-            }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="dcterms.created" content="Sat, 28 Sep 2024 3:52:31 EST">
+    <title>Contact // Nebula</title>
+    <!--Embed description and icon-->
+    <meta content="https://nebula-prod.github.io/cdn/assets/logo1080vec.png" property="og:image">
+    <meta name="description" content="Contact page for Nebula Studios">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="/cdn/assets/logo1080vec.png">
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/scripts/mobilecheck.js"></script>
+    <script src="/scripts/anim_inhibitor.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-            .social-button {
-                background: #333;
-                color: white;
-                border: solid 2px;
-                border-radius: 0.25rem;
-                padding: 1.5rem;
-                text-align: center;
-                cursor: pointer;
-                transition: transform 0.2s, box-shadow 0.2s;
-                text-decoration: none;
-            }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+        }
 
-            .social-button p {    
-                font-size: 14pt;
-                font-family: "Montserrat", sans-serif;
-                font-weight: 450;
-            }
+        .social-button {
+            background: #333;
+            color: white;
+            border: solid 2px;
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
 
-            .social-button:hover p {
-                font-weight: 600;
-                transition: font-weight 0.25s 0.1s cubic-bezier(.74,0,.13,.99);
-            }
+        .social-button p {
+            font-size: 14pt;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 450;
+        }
 
-            .projectgriditem {
-                width: 5rem;
-                height: 5rem;
-            }
+        .social-button:hover p {
+            font-weight: 600;
+            transition: font-weight 0.25s 0.1s cubic-bezier(.74, 0, .13, .99);
+        }
 
-            .projectgriditem:hover img {
-                transform: translateZ(40px);
-                transition: transform 1s 0.1s cubic-bezier(.74,0,.13,.99);
-            }
+        .projectgriditem {
+            width: 5rem;
+            height: 5rem;
+        }
 
-            .social-button img {
-                width: 60px;
-                height: 60px;
-            }
+        .projectgriditem:hover img {
+            transform: translateZ(40px);
+            transition: transform 1s 0.1s cubic-bezier(.74, 0, .13, .99);
+        }
 
-            .discord   { border-color: #5865F2; background-color: #181a30; }
-            .youtube   { border-color: #FF0000; background-color: #280909; }
-            .tumblr    { border-color: #446fab; background-color: #0e1217; }
-            .bluesky   { border-color: #0085FF; background-color: #0c1a27; }
-            .instagram { border-color: #C13584; background-color: #17050f; }
-            .tiktok    { border-color: #fc2c53; background-color: #0b0b16; }
-            .reddit    { border-color: #FF4500; background-color: #140803; }
-            .twitter   { border-color: #1DA1F2; background-color: #06131c; }
+        .social-button img {
+            width: 60px;
+            height: 60px;
+        }
 
-        </style>
-    </head>
-    <body>
-        <div class="topnav">
-            <a href="/">HOME</a>
-            <a href="/portfolio/">PROJECTS</a>
-            <a class="topnavactive" href="#">CONTACT</a>
-            <a href="/about/">ABOUT</a>
-        </div>
-        <div class="headerbg">
-            <video class="divvideobg" autoplay muted loop>
-                <source src="/cdn/assets/dots_bg.mp4">
-            </video>
-        </div>
-        <div class="headercontainer">
-            <div class="headertextbg">
-                <img src="/cdn/assets/logo1080vec.png">
-                <div class="headertextcontainer">
-                    <h1 class="nebulafont">NEBULA</h1>
-                    <h2><sb>CONTACT</sb> US</h2>
-                </div>
+        .discord {
+            border-color: #5865F2;
+            background-color: #181a30;
+        }
+
+        .youtube {
+            border-color: #FF0000;
+            background-color: #280909;
+        }
+
+        .tumblr {
+            border-color: #446fab;
+            background-color: #0e1217;
+        }
+
+        .bluesky {
+            border-color: #0085FF;
+            background-color: #0c1a27;
+        }
+
+        .instagram {
+            border-color: #C13584;
+            background-color: #17050f;
+        }
+
+        .tiktok {
+            border-color: #fc2c53;
+            background-color: #0b0b16;
+        }
+
+        .reddit {
+            border-color: #FF4500;
+            background-color: #140803;
+        }
+
+        .twitter {
+            border-color: #1DA1F2;
+            background-color: #06131c;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topnav"></div>
+    <script>
+        fetch("/shared/nav.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("topnav").innerHTML = html);
+    </script>
+    <div class="headerbg">
+        <video class="divvideobg" autoplay muted loop>
+            <source src="/cdn/assets/dots_bg.mp4">
+        </video>
+    </div>
+    <div class="headercontainer">
+        <div class="headertextbg">
+            <img src="/cdn/assets/logo1080vec.png">
+            <div class="headertextcontainer">
+                <h1 class="nebulafont">NEBULA</h1>
+                <h2>
+                    <sb>CONTACT</sb> US
+                </h2>
             </div>
         </div>
-        <div class="firstcontentdiv" style="margin-top: 9.2vw; height: 30vw; background-color: rgba(0, 0, 0, 0);">
-            <img src="/cdn/assets/grid_pink.png" class="mailbg">
-            <h1 style="font-size: 3vw; z-index: 1;">GET IN <sb>TOUCH</sb></h1>
-            <p style="font-size: 1.2vw; z-index: 1;">For the fastest response, contact our founder, C̵l̸a̸i̶r̴e̸, on Discord @claraj.<br><br>
-                <sb>We look forward to hearing from you!</sb><br><br>
-                ONE OF US:</p>
-            
-            <div class="grid" style="z-index: 1;">
-                <a href="https://discord.gg/2zUVXehERU" target="_blank" class="social-button projectgriditem discord">
-                    <img src="/cdn/assets/socialicons/discord.png" alt="Discord icon"><br>
-                    <p>Discord</p>
-                </a>
-                <a href="https://www.youtube.com/@NebulousCreators" target="_blank" class="social-button projectgriditem youtube">
-                    <img src="/cdn/assets/socialicons/youtube.png" alt="YouTube icon"><br>
-                    <p>YouTube</p>
-                </a>
-                <a href="https://www.tiktok.com/@nebulouscreators" target="_blank" class="social-button projectgriditem tiktok">
-                    <img src="/cdn/assets/socialicons/tiktok.png" alt="TikTok icon"><br>
-                    <p>TikTok</p>
-                </a>
-                <a href="https://www.instagram.com/nebulouscreators/" target="_blank" class="social-button projectgriditem instagram">
-                    <img src="/cdn/assets/socialicons/instagram.png" alt="Instagram icon"><br>
-                    <p>Instagram</p>
-                </a>
-                <a href="https://www.tumblr.com/nebulous-creators" target="_blank" class="social-button projectgriditem tumblr">
-                    <img src="/cdn/assets/socialicons/tumblr.png" alt="Tumblr icon"><br>
-                    <p>Tumblr</p>
-                </a>
-                <a href="https://bsky.app/profile/nebulouscreators.bsky.social" target="_blank" class="social-button projectgriditem bluesky">
-                    <img src="/cdn/assets/socialicons/bluesky.png" alt="Bluesky icon"><br>
-                    <p>Bluesky</p>
-                </a>
-                <a href="https://www.reddit.com/user/NebulousCreators/" target="_blank" class="social-button projectgriditem reddit">
-                    <img src="/cdn/assets/socialicons/reddit.png" alt="Reddit icon"><br>
-                    <p>Reddit</p>
-                </a>
-                <a href="https://twitter.com/nebulacreators" target="_blank" class="social-button projectgriditem twitter">
-                    <img src="/cdn/assets/socialicons/twitter.png" alt="Twitter icon"><br>
-                    <p>Twitter</p>
-                </a>
-            </div>
+    </div>
+    <div class="firstcontentdiv" style="margin-top: 9.2vw; height: 30vw; background-color: rgba(0, 0, 0, 0);">
+        <img src="/cdn/assets/grid_pink.png" class="mailbg">
+        <h1 style="font-size: 3vw; z-index: 1;">GET IN <sb>TOUCH</sb>
+        </h1>
+        <p style="font-size: 1.2vw; z-index: 1;">For the fastest response, contact our founder, C̵l̸a̸i̶r̴e̸, on Discord
+            @claraj.<br><br>
+            <sb>We look forward to hearing from you!</sb><br><br>
+            ONE OF US:
+        </p>
+
+        <div class="grid" style="z-index: 1;">
+            <a href="https://discord.gg/2zUVXehERU" target="_blank" class="social-button projectgriditem discord">
+                <img src="/cdn/assets/socialicons/discord.png" alt="Discord icon"><br>
+                <p>Discord</p>
+            </a>
+            <a href="https://www.youtube.com/@NebulousCreators" target="_blank"
+                class="social-button projectgriditem youtube">
+                <img src="/cdn/assets/socialicons/youtube.png" alt="YouTube icon"><br>
+                <p>YouTube</p>
+            </a>
+            <a href="https://www.tiktok.com/@nebulouscreators" target="_blank"
+                class="social-button projectgriditem tiktok">
+                <img src="/cdn/assets/socialicons/tiktok.png" alt="TikTok icon"><br>
+                <p>TikTok</p>
+            </a>
+            <a href="https://www.instagram.com/nebulouscreators/" target="_blank"
+                class="social-button projectgriditem instagram">
+                <img src="/cdn/assets/socialicons/instagram.png" alt="Instagram icon"><br>
+                <p>Instagram</p>
+            </a>
+            <a href="https://www.tumblr.com/nebulous-creators" target="_blank"
+                class="social-button projectgriditem tumblr">
+                <img src="/cdn/assets/socialicons/tumblr.png" alt="Tumblr icon"><br>
+                <p>Tumblr</p>
+            </a>
+            <a href="https://bsky.app/profile/nebulouscreators.bsky.social" target="_blank"
+                class="social-button projectgriditem bluesky">
+                <img src="/cdn/assets/socialicons/bluesky.png" alt="Bluesky icon"><br>
+                <p>Bluesky</p>
+            </a>
+            <a href="https://www.reddit.com/user/NebulousCreators/" target="_blank"
+                class="social-button projectgriditem reddit">
+                <img src="/cdn/assets/socialicons/reddit.png" alt="Reddit icon"><br>
+                <p>Reddit</p>
+            </a>
+            <a href="https://twitter.com/nebulacreators" target="_blank" class="social-button projectgriditem twitter">
+                <img src="/cdn/assets/socialicons/twitter.png" alt="Twitter icon"><br>
+                <p>Twitter</p>
+            </a>
         </div>
-    </body>
-    <footer>
-        <div style="text-align: center;">
-        © Nebula Studios, 2025<br>Do not reuse or redistribute our assets without permission under any circumstance.<br>All rights reserved.<br>
-        </div>
-    </footer>
-    <script src="/scripts/tilt.js"></script>
+    </div>
+</body>
+<div id="footer"></div>
+<script>
+    fetch("/shared/footer.html")
+        .then(res => res.text())
+        .then(html => document.getElementById("footer").innerHTML = html);
+</script>
+<script src="/scripts/tilt.js"></script>
+
 </html>
