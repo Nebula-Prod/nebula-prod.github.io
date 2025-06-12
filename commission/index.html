@@ -39,7 +39,7 @@
 
         form,
         .summary {
-            background: rgba(14, 16, 19, 0.75);
+            background: rgba(14, 16, 19, 0.441);
             backdrop-filter: blur(3px);
             padding: 1.5em;
             border-radius: 0px;
@@ -317,7 +317,10 @@
         </p>
     </div>
     <div class="contentdiv"
-        style="padding-bottom: 4vw; padding-top: 4vw; height: auto; background-image: url('/cdn/assets/crossgrid.png'); background-attachment: fixed;">
+        style="padding-bottom: 4vw; padding-top: 4vw; height: auto; position: relative; overflow: hidden;">
+        <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(40%);" autoplay muted loop playsinline>
+            <source src="/cdn/assets/crossgrid_anim.mp4" type="video/mp4">
+        </video>
         <div class="container">
             <form id="commissionForm" style="width: 100vw;">
                 <!-- Package Selection -->
@@ -407,7 +410,10 @@
         </div>
     </div>
     <div class="contentdiv"
-        style="padding-bottom: 4vw; padding-top: 4vw; height: auto; background-image: url('/cdn/assets/angledgrid.png'); background-attachment: fixed;">
+        style="padding-bottom: 4vw; padding-top: 4vw; height: auto; position: relative; overflow: hidden;">
+        <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(40%);" autoplay muted loop playsinline>
+            <source src="/cdn/assets/dotsgrid_anim.mp4" type="video/mp4">
+        </video>
         <h1>
             FORM <sb>HELP</sb>
         </h1>
